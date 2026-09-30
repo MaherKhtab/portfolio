@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>ماهر خطاب | مطوّر Full-Stack (Laravel) وتطبيقات Flutter</title>
+  <meta name="description" content="ماهر خطاب — مطوّر ويب Full-Stack متخصص في Laravel ولوحات التحكم الإدارية، وربط تطبيقات Flutter بالباك إند، والنشر على سيرفرات Linux VPS." />
+  <meta name="theme-color" content="#070b14" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=El+Messiri:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+  <!-- شريط تقدّم القراءة -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- الخلفية -->
+  <div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ====== الهيدر العائم ====== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#hero" class="brand" aria-label="ماهر خطاب — العودة للأعلى">
+        <span class="brand-mark">MK</span>
+        <span class="brand-text">
+          <strong>ماهر خطاب</strong>
+          <small>Full-Stack · Flutter</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+        <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+        <a href="#hero" data-section="hero">الرئيسية</a>
+        <a href="#about" data-section="about">من أنا</a>
+        <a href="#skills" data-section="skills">المهارات</a>
+        <a href="#projects" data-section="projects">المشاريع</a>
+        <a href="#process" data-section="process">منهجيتي</a>
+        <a href="#contact" data-section="contact">تواصل</a>
+      </nav>
+
+      <a href="#contact" class="header-cta">
+        <span>لنبدأ مشروعك</span>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 5l-7 7 7 7" /></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ====== الشريط الجانبي (سطح المكتب) ====== -->
+  <nav class="side-rail" aria-label="أقسام الصفحة">
+    <a href="#hero" data-section="hero"><span class="rail-dot"></span><span class="rail-label">00 · الرئيسية</span></a>
+    <a href="#about" data-section="about"><span class="rail-dot"></span><span class="rail-label">01 · من أنا</span></a>
+    <a href="#skills" data-section="skills"><span class="rail-dot"></span><span class="rail-label">02 · المهارات</span></a>
+    <a href="#projects" data-section="projects"><span class="rail-dot"></span><span class="rail-label">03 · المشاريع</span></a>
+    <a href="#process" data-section="process"><span class="rail-dot"></span><span class="rail-label">04 · منهجيتي</span></a>
+    <a href="#contact" data-section="contact"><span class="rail-dot"></span><span class="rail-label">05 · تواصل</span></a>
+  </nav>
+
+  <!-- ====== شريط التنقل السفلي (الموبايل) ====== -->
+  <nav class="mobile-dock" aria-label="التنقل السريع">
+    <a href="#hero" data-section="hero">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h14V10" /></svg>
+      <span>الرئيسية</span>
+    </a>
+    <a href="#about" data-section="about">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" /></svg>
+      <span>من أنا</span>
+    </a>
+    <a href="#skills" data-section="skills">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5" /></svg>
+      <span>المهارات</span>
+    </a>
+    <a href="#projects" data-section="projects">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></svg>
+      <span>المشاريع</span>
+    </a>
+    <a href="#contact" data-section="contact">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+      <span>تواصل</span>
+    </a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ====== HERO ====== -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="status-pill"><span class="pulse"></span>متاح لمشاريع وفرص عمل جديدة</div>
+
+          <p class="hero-kicker">مرحباً، أنا</p>
+          <h1 class="hero-name">ماهر <span class="gold-text">خطاب</span></h1>
+
+          <p class="hero-role">
+            <span>مطوّر</span>
+            <span class="typed" id="typedText"
+              data-words='["Full-Stack (Laravel)","لوحات تحكم إدارية","تطبيقات Flutter","واجهات API متكاملة"]'>Full-Stack (Laravel)</span><span class="caret" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero-lead">
+            أبني <strong>لوحات التحكم والمنصات بـ Laravel</strong>، وأربطها بتطبيقات <strong>Flutter</strong>،
+            ثم أنشرها على سيرفرات <strong>Linux VPS</strong> — حلول سريعة، متجاوبة، وموثوقة.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-gold magnetic">
+              <span>استعرض أعمالي</span>
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 5l-7 7 7 7" /></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">لنتحدث عن مشروعك</a>
+            <a href="CV_MAHER_KHTAB.pdf" download="CV_MAHER_KHTAB.pdf" class="btn btn-ghost">
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></svg>
+              <span>السيرة الذاتية</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num"><span data-count="8">8</span><span class="gold-text">+</span></span>
+              <span class="stat-label">مشاريع منجزة</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num"><span data-count="1">1</span><span class="gold-text">+</span></span>
+              <span class="stat-label">سنة خبرة عملية</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num"><span data-count="3">3</span></span>
+              <span class="stat-label">منصات منشورة على VPS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="portrait">
+            <div class="portrait-ring" aria-hidden="true"></div>
+            <div class="portrait-ring dashed" aria-hidden="true"></div>
+            <div class="portrait-inner">
+              <span class="portrait-fallback" aria-hidden="true">م.خ</span>
+              <img src="images/photo.jpg" alt="ماهر خطاب" onerror="this.remove()" />
+            </div>
+            <span class="orbit-chip chip-a"><span class="dot"></span>Laravel</span>
+            <span class="orbit-chip chip-b"><span class="dot"></span>Flutter</span>
+            <span class="orbit-chip chip-c"><span class="dot"></span>MySQL</span>
+            <span class="orbit-chip chip-d"><span class="dot"></span>Linux VPS</span>
+          </div>
+
+          <div class="code-card" aria-hidden="true">
+            <div class="code-bar"><i></i><i></i><i></i><span>Developer.php</span></div>
+<pre><span class="tk-v">$maher</span> = <span class="tk-k">new</span> <span class="tk-f">Developer</span>();
+<span class="tk-v">$maher</span>-><span class="tk-f">build</span>(<span class="tk-s">'Laravel Dashboard'</span>)
+      -><span class="tk-f">connect</span>(<span class="tk-s">'Flutter App'</span>)
+      -><span class="tk-f">deploy</span>(<span class="tk-s">'Linux VPS'</span>);
+<span class="tk-c">// ✓ fast · responsive · reliable</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="انتقل إلى القسم التالي">
+        <span class="mouse"></span>
+        <span>مرّر للأسفل</span>
+      </a>
+    </section>
+
+    <!-- شريط التقنيات -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Flutter</span><span>Dart</span><span>Firebase</span><span>Bagisto</span><span>Linux VPS</span><span>JavaScript</span><span>SQLite</span><span>Git</span><span>Postman</span>
+        <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Flutter</span><span>Dart</span><span>Firebase</span><span>Bagisto</span><span>Linux VPS</span><span>JavaScript</span><span>SQLite</span><span>Git</span><span>Postman</span>
+      </div>
+    </div>
+
+    <!-- ====== ABOUT ====== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="eyebrow-num">01</span>من أنا</span>
+          <h2 class="section-title">أبني <span class="gold-text">الأساس المتين</span> خلف كل تطبيق</h2>
+          <p class="section-lead">من قاعدة البيانات ولوحة التحكم، إلى ربط التطبيق ونشره على السيرفر — أتولّى الجزء الذي لا يراه المستخدم لكنه يشعر به في كل نقرة.</p>
+        </div>
+
+        <div class="bento">
+          <article class="card span-2" data-reveal>
+            <div class="card-label">
+              <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" /></svg></span>
+              نبذة مهنية
+            </div>
+            <p class="bio-text">
+              مطوّر ويب Full-Stack بخبرة تتجاوز السنة في بناء المواقع والمنصات و<mark>لوحات التحكم الإدارية</mark>
+              باستخدام Laravel وPHP وMySQL وHTML وCSS وJavaScript، ونشرها على سيرفرات Linux VPS.
+              لدي خبرة أيضاً في تطوير تطبيقات <mark>Flutter</mark> وربطها بباك إند Laravel، مع تركيز دائم على
+              حلول سريعة ومتجاوبة وموثوقة.
+            </p>
+            <div class="bio-meta">
+              <span class="meta-chip">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+                دمشق، سوريا
+              </span>
+              <span class="meta-chip">🌐 العمل عن بُعد</span>
+              <span class="meta-chip">🗣️ العربية · English</span>
+            </div>
+          </article>
+
+          <article class="card row-2" data-reveal>
+            <div class="card-label">
+              <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></span>
+              الخبرة العملية
+            </div>
+            <div class="timeline">
+              <div class="tl-item">
+                <span class="tl-date">2025 — حتى الآن</span>
+                <h3>مطوّر ويب Full-Stack مستقل (Freelance)</h3>
+                <ul class="tl-points">
+                  <li>بناء لوحات تحكم Laravel والباك إند وقواعد البيانات لمنصات ويب وتطبيقات موبايل.</li>
+                  <li>إعداد ونشر وإدارة التطبيقات على سيرفرات Linux VPS.</li>
+                  <li>تسليم أكثر من 8 مشاريع في مجالَي الويب والموبايل.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="card span-2" data-reveal>
+            <div class="card-label">
+              <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5" /></svg></span>
+              ما الذي أقدّمه
+            </div>
+            <div class="services">
+              <div class="service">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" /></svg></span>
+                <h3>لوحات تحكم Laravel</h3>
+                <p>باك إند وقواعد بيانات، أدوار وصلاحيات، وإدارة كاملة للمحتوى.</p>
+              </div>
+              <div class="service">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5" /><path d="M11 18h2" /></svg></span>
+                <h3>ربط تطبيقات Flutter</h3>
+                <p>واجهات API، إشعارات Firebase اللحظية، وتخزين محلي أوفلاين.</p>
+              </div>
+              <div class="service">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2" /><rect x="3" y="13" width="18" height="7" rx="2" /><path d="M7 7.5h.01M7 16.5h.01" /></svg></span>
+                <h3>نشر على Linux VPS</h3>
+                <p>إعداد السيرفر ونشر المشروع وإدارته بعد الإطلاق.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card span-3 strip" data-reveal>
+            <div class="strip-group">
+              <span class="strip-title">اللغات</span>
+              <span class="meta-chip">العربية — اللغة الأم</span>
+              <span class="meta-chip">English — Fluent</span>
+            </div>
+            <div class="strip-group">
+              <span class="strip-title">خارج الشاشة</span>
+              <span class="meta-chip">🏋️ كمال الأجسام</span>
+              <span class="meta-chip">⚽ كرة القدم</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SKILLS ====== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="eyebrow-num">02</span>المهارات التقنية</span>
+          <h2 class="section-title">أدوات أعمل بها <span class="gold-text">يومياً</span></h2>
+          <p class="section-lead">التقنيات المميّزة بالذهبي هي محور عملي الأساسي.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="card" data-reveal>
+            <div class="skill-head">
+              <div class="skill-head-main">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5" /></svg></span>
+                <h3>تطوير الويب والباك إند</h3>
+              </div>
+              <span class="skill-count">06</span>
+            </div>
+            <ul class="chips">
+              <li class="chip core">PHP</li>
+              <li class="chip core">Laravel</li>
+              <li class="chip">Bagisto</li>
+              <li class="chip">REST API</li>
+              <li class="chip">JavaScript</li>
+              <li class="chip">HTML5 / CSS3</li>
+            </ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="skill-head">
+              <div class="skill-head-main">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5" /><path d="M11 18h2" /></svg></span>
+                <h3>تطوير الموبايل</h3>
+              </div>
+              <span class="skill-count">06</span>
+            </div>
+            <ul class="chips">
+              <li class="chip core">Flutter</li>
+              <li class="chip core">Dart</li>
+              <li class="chip">Firebase Push Notifications</li>
+              <li class="chip">SharedPreferences</li>
+              <li class="chip">Local Data Storage</li>
+              <li class="chip">PDF Export</li>
+            </ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="skill-head">
+              <div class="skill-head-main">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></svg></span>
+                <h3>قواعد البيانات</h3>
+              </div>
+              <span class="skill-count">03</span>
+            </div>
+            <ul class="chips">
+              <li class="chip core">MySQL</li>
+              <li class="chip">SQLite</li>
+              <li class="chip">JSON File Management</li>
+            </ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="skill-head">
+              <div class="skill-head-main">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2" /><rect x="3" y="13" width="18" height="7" rx="2" /><path d="M7 7.5h.01M7 16.5h.01" /></svg></span>
+                <h3>الأدوات والنشر</h3>
+              </div>
+              <span class="skill-count">05</span>
+            </div>
+            <ul class="chips">
+              <li class="chip core">Linux VPS</li>
+              <li class="chip">Git / GitHub</li>
+              <li class="chip">Postman</li>
+              <li class="chip">Ngrok</li>
+              <li class="chip">XAMPP & Laragon</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROJECTS ====== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="eyebrow-num">03</span>المشاريع التقنية</span>
+          <h2 class="section-title">أعمال <span class="gold-text">منجزة ومسلّمة</span></h2>
+          <p class="section-lead">اختر التصنيف، ثم اضغط على أي مشروع لعرض دوري ومميزاته بالتفصيل.</p>
+        </div>
+
+        <div class="filter-bar" data-reveal>
+          <div class="filters" id="projectFilters" role="group" aria-label="تصفية المشاريع">
+            <span class="filter-indicator" aria-hidden="true"></span>
+            <button class="filter-btn is-active" data-filter="all" aria-pressed="true">الكل <span class="count">8</span></button>
+            <button class="filter-btn" data-filter="web" aria-pressed="false">الويب و Laravel <span class="count">4</span></button>
+            <button class="filter-btn" data-filter="mobile" aria-pressed="false">تطبيقات Flutter <span class="count">3</span></button>
+            <button class="filter-btn" data-filter="desktop" aria-pressed="false">سطح المكتب <span class="count">1</span></button>
+          </div>
+          <p class="filter-result" id="filterResult" aria-live="polite"></p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- 01 -->
+          <article class="card project-card" data-category="web" data-reveal>
+            <header class="pc-head">
+              <span class="pc-index">01</span>
+              <span class="pc-type t-web">منصة ويب + API</span>
+            </header>
+            <h3 class="pc-title">منصة مناقصات قطع السيارات</h3>
+            <p class="pc-sub">Car Parts Tenders — Neutral Marketplace</p>
+            <p class="pc-desc">منصة محايدة تربط الزبائن بتجار قطع السيارات عبر نظام مناقصات، دون أي مسؤولية مالية على المنصة.</p>
+            <ul class="pc-tech"><li>Laravel</li><li>PHP</li><li>Firebase</li><li>Flutter API</li><li>Linux VPS</li></ul>
+            <footer class="pc-foot">
+              <span class="pc-role">دوري: الباك إند ولوحة التحكم</span>
+              <button class="pc-btn" data-open-project>التفاصيل <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17L7 7M15 7H7v8" /></svg></button>
+            </footer>
+            <div class="pc-more" hidden>
+              <h4>دوري في المشروع</h4>
+              <p>بناء لوحة التحكم الكاملة من الصفر: الباك إند وقاعدة البيانات ولوحة الويب بواجهة مخصّصة بالكحلي والأخضر.</p>
+              <h4>أبرز المميزات</h4>
+              <ul>
+                <li>لوحة تحكم متقدمة بتحكم كامل في المنصة</li>
+                <li>نظام بنرات وصلاحيات قائم على الأدوار</li>
+                <li>محرك بحث ذكي وأداء سريع</li>
+                <li>إشعارات لحظية عبر Firebase</li>
+                <li>واجهة احترافية بتدرّجات لونية</li>
+                <li>متوافق مع GDPR مع سياسة خصوصية للنشر على المتاجر</li>
+              </ul>
+              <p class="modal-note">واجهة تطبيق الموبايل طُوّرت بشكل منفصل، وكان دوري ربطها بالباك إند.</p>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article class="card project-card" data-category="web" data-reveal>
+            <header class="pc-head">
+              <span class="pc-index">02</span>
+              <span class="pc-type t-web">متجر إلكتروني</span>
+            </header>
+            <h3 class="pc-title">متجر عيلتنا للبقالة</h3>
+            <p class="pc-sub">Our Family — Grocery E-Commerce</p>
+            <p class="pc-desc">تطبيق متجر إلكتروني لبيع المواد الغذائية عبر الموبايل، مع لوحة تحكم كاملة مبنية على Bagisto.</p>
+            <ul class="pc-tech"><li>Laravel</li><li>Bagisto</li><li>PHP</li><li>Firebase</li><li>PayPal / IBAN</li><li>Linux VPS</li></ul>
+            <footer class="pc-foot">
+              <span class="pc-role">دوري: الباك إند ولوحة التحكم</span>
+              <button class="pc-btn" data-open-project>التفاصيل <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17L7 7M15 7H7v8" /></svg></button>
+            </footer>
+            <div class="pc-more" hidden>
+              <h4>دوري في المشروع</h4>
+              <p>بناء لوحة التحكم الكاملة (الباك إند وقاعدة البيانات ولوحة الويب) على إطار التجارة الإلكترونية Bagisto المبني على Laravel.</p>
+              <h4>أبرز المميزات</h4>
+              <ul>
+                <li>لوحة تحكم متقدمة بتحكم كامل (Bagisto)</li>
+                <li>نقاط ولاء، بنرات، وتتبّع الطلبات</li>
+                <li>محرك بحث متعدد الأغراض</li>
+                <li>الدفع عبر IBAN و PayPal</li>
+                <li>إشعارات لحظية عبر Firebase</li>
+                <li>متوافق مع GDPR مع سياسة خصوصية للنشر على المتاجر</li>
+              </ul>
+              <p class="modal-note">واجهة تطبيق الموبايل طُوّرت بشكل منفصل، وكان دوري ربطها بالباك إند.</p>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="card project-card" data-category="web" data-reveal>
+            <header class="pc-head">
+              <span class="pc-index">03</span>
+              <span class="pc-type t-web">منصة تعليمية</span>
+            </header>
+            <h3 class="pc-title">منصة Bayah School التعليمية</h3>
+            <p class="pc-sub">Bayah School — Educational Platform</p>
+            <p class="pc-desc">موقع تعليمي لمدرسة في الإمارات يضم نظام اختبارات وتتبّعاً دقيقاً لنقاط ونشاط الطلاب.</p>
+            <ul class="pc-tech"><li>Laravel</li><li>PHP</li><li>JavaScript</li><li>HTML / CSS</li><li>VPS Hosting</li></ul>
+            <footer class="pc-foot">
+              <span class="pc-role">تطوير ونشر على VPS</span>
+              <button class="pc-btn" data-open-project>التفاصيل <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17L7 7M15 7H7v8" /></svg></button>
+            </footer>
+            <div class="pc-more" hidden>
+              <h4>عن المشروع</h4>
+              <p>منصة تعليمية تحفّز الطلاب على التفاعل عبر الاختبارات والنقاط ولوحة المتصدرين.</p>
+              <h4>أبرز المميزات</h4>
+              <ul>
+                <li>نظام اختبارات قصيرة (Quizzes) مع تتبّع النقاط</li>
+                <li>نظام حساب نقاط دقيق</li>
+                <li>لوحة متصدرين حسب نشاط الطلاب</li>
+                <li>رفع فيديوهات وبودكاست وملفات PDF</li>
+                <li>إعجابات وتعليقات</li>
+                <li>رفع ملفات سرّية</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article class="card project-card" data-category="web" data-reveal>
+            <header class="pc-head">
+              <span class="pc-index">04</span>
+              <span class="pc-type t-web">أداة ويب</span>
+            </header>
+            <h3 class="pc-title">حاسبة الصناديق التركية</h3>
+            <p class="pc-sub">Turkish Box — Box Cost Calculator</p>
+            <p class="pc-desc">موقع لحساب تكاليف الصناديق بناءً على أبعادها، بنتائج فورية ودقيقة.</p>
+            <ul class="pc-tech"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub</li></ul>
+            <footer class="pc-foot">
+              <span class="pc-role">تصميم وتطوير كامل</span>
+              <button class="pc-btn" data-open-project>التفاصيل <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17L7 7M15 7H7v8" /></svg></button>
+            </footer>
+            <div class="pc-more" hidden>
+              <h4>عن المشروع</h4>
+              <p>أداة عملية تختصر حساب تكلفة الصناديق يدوياً إلى إدخال الأبعاد فقط.</p>
+              <h4>أبرز المميزات</h4>
+              <ul>
+                <li>تصميم متجاوب لجميع الأجهزة</li>
+                <li>حسابات فورية ودقيقة</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article class="card project-card" data-category="mobile" data-reveal>
+            <header class="pc-head">
+              <span class="pc-index">05</span>
+              <span class="pc-type t-mobile">تطبيق Flutter</span>
+            </header>
+            <h3 class="pc-title">تطبيق أجور العمال</h3>
+            <p class="pc-sub">Workers Wages App</p>
+            <p class="pc-desc">تطبيق خفيف لإدارة أجور العمال بعملات متعددة مع تتبّع الحضور والغياب.</p>
+            <ul class="pc-tech"><li>Flutter</li><li>Dart</li><li>SharedPreferences</li><li>Offline</li></ul>
+            <footer class="pc-foot">
+              <span class="pc-role">تطوير كامل</span>
+              <button class="pc-btn" data-open-project>التفاصيل <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17L7 7M15 7H7v8" /></svg></button>
+            </footer>
+            <div class="pc-more" hidden>
+              <h4>عن المشروع</h4>
+              <p>تطبيق يعمل بالكامل دون إنترنت لإدارة أجور وحضور العمال بسرعة.</p>
+              <h4>أبرز المميزات</h4>
+              <ul>
+                <li>حساب الأجور بعملات متعددة</li>
+                <li>تسجيل الحضور بنقرة واحدة</li>
+                <li>فهرس للبحث السريع</li>
+                <li>تخزين دائم أوفلاين</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 06 -->
+          <article class="card project-card" data-category="mobile" data-reveal>
+            <header class="pc-head">
+              <span class="pc-index">06</span>
+              <span class="pc-type t-mobile">تطبيق Flutter</span>
+            </header>
+            <h3 class="pc-title">محاسب سوق الهال</h3>
+            <p class="pc-sub">Al-Hal Market Accountant</p>
+            <p class="pc-desc">تطبيق محاسبي متكامل لأسواق الجملة، بواجهة مضغوطة تعرض كل شيء في شاشة واحدة.</p>
+            <ul class="pc-tech"><li>Flutter</li><li>Dart</li><li>SharedPreferences</li><li>JSON</li><li>PDF</li></ul>
+            <footer class="pc-foot">
+              <span class="pc-role">تطوير كامل</span>
+              <button class="pc-btn" data-open-project>التفاصيل <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17L7 7M15 7H7v8" /></svg></button>
+            </footer>
+            <div class="pc-more" hidden>
+              <h4>عن المشروع</h4>
+              <p>مصمم لسرعة الإدخال في بيئة سوق الجملة المزدحمة.</p>
+              <h4>أبرز المميزات</h4>
+              <ul>
+                <li>تصميم مضغوط يعرض كل العناصر في شاشة واحدة</li>
+                <li>تخزين دائم أوفلاين</li>
+                <li>فهرس للبحث السريع</li>
+                <li>تصدير التقارير إلى PDF</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 07 -->
+          <article class="card project-card" data-category="mobile" data-reveal>
+            <header class="pc-head">
+              <span class="pc-index">07</span>
+              <span class="pc-type t-mobile">تطبيق Flutter</span>
+            </header>
+            <h3 class="pc-title">مدير ديون المحل</h3>
+            <p class="pc-sub">Shop Debts Manager</p>
+            <p class="pc-desc">تطبيق لتتبّع ديون السوبرماركت والمحلات بديلاً عن دفاتر الديون التقليدية.</p>
+            <ul class="pc-tech"><li>Flutter</li><li>Dart</li><li>SharedPreferences</li><li>JSON</li><li>PDF</li></ul>
+            <footer class="pc-foot">
+              <span class="pc-role">تطوير كامل</span>
+              <button class="pc-btn" data-open-project>التفاصيل <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17L7 7M15 7H7v8" /></svg></button>
+            </footer>
+            <div class="pc-more" hidden>
+              <h4>عن المشروع</h4>
+              <p>يحوّل دفتر الديون الورقي إلى نظام منظّم مع فواتير ونسخ احتياطي.</p>
+              <h4>أبرز المميزات</h4>
+              <ul>
+                <li>حساب وتحليل ميزانية المحل</li>
+                <li>إنشاء فاتورة PDF خلال ثانيتين</li>
+                <li>نسخ احتياطي ونقل البيانات</li>
+                <li>فهرس للبحث السريع</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 08 -->
+          <article class="card project-card" data-category="desktop" data-reveal>
+            <header class="pc-head">
+              <span class="pc-index">08</span>
+              <span class="pc-type t-desktop">سطح المكتب</span>
+            </header>
+            <h3 class="pc-title">التطبيق المحاسبي الأصلي</h3>
+            <p class="pc-sub">Original Accounting App</p>
+            <p class="pc-desc">تطبيق محاسبة لسطح المكتب مخصّص لتجارة البضائع، يعمل بالكامل من لوحة المفاتيح.</p>
+            <ul class="pc-tech"><li>Flutter Desktop</li><li>Dart</li><li>SharedPreferences</li><li>JSON</li><li>PDF</li></ul>
+            <footer class="pc-foot">
+              <span class="pc-role">تطوير كامل</span>
+              <button class="pc-btn" data-open-project>التفاصيل <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17L7 7M15 7H7v8" /></svg></button>
+            </footer>
+            <div class="pc-more" hidden>
+              <h4>عن المشروع</h4>
+              <p>مصمم للإدخال السريع جداً دون الحاجة للماوس.</p>
+              <h4>أبرز المميزات</h4>
+              <ul>
+                <li>تشغيل كامل بلوحة المفاتيح دون ماوس</li>
+                <li>تخزين دائم يدعم أجهزة متعددة</li>
+                <li>تصدير الفواتير والتفاصيل إلى PDF</li>
+                <li>نظام نسخ احتياطي</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROCESS ====== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="eyebrow-num">04</span>منهجيتي</span>
+          <h2 class="section-title">من الفكرة إلى <span class="gold-text">السيرفر</span></h2>
+          <p class="section-lead">أربع مراحل واضحة، حتى تعرف دائماً أين وصل مشروعك.</p>
+        </div>
+
+        <ol class="process">
+          <li class="card step" data-reveal>
+            <span class="step-num">01</span>
+            <h3>فهم المتطلبات</h3>
+            <p>تحديد أهداف المشروع والمستخدمين والأدوار والصلاحيات قبل أي شيء.</p>
+          </li>
+          <li class="card step" data-reveal>
+            <span class="step-num">02</span>
+            <h3>تصميم البنية</h3>
+            <p>هيكلة قاعدة البيانات والعلاقات وواجهات API بشكل قابل للتوسّع.</p>
+          </li>
+          <li class="card step" data-reveal>
+            <span class="step-num">03</span>
+            <h3>التطوير والربط</h3>
+            <p>بناء الباك إند ولوحة التحكم بـ Laravel وربطها بتطبيق Flutter والإشعارات.</p>
+          </li>
+          <li class="card step" data-reveal>
+            <span class="step-num">04</span>
+            <h3>النشر والمتابعة</h3>
+            <p>إعداد سيرفر Linux VPS ونشر المشروع ومتابعته بعد التسليم.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====== CONTACT ====== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow"><span class="eyebrow-num">05</span>تواصل معي</span>
+          <h2 class="section-title">لديك مشروع أو <span class="gold-text">فرصة عمل؟</span></h2>
+          <p class="section-lead">متاح لبناء المنصات ولوحات تحكم Laravel وتطبيقات Flutter وربطها ونشرها على Linux VPS.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-side" data-reveal>
+            <div class="channels">
+              <div class="channel">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg></span>
+                <div class="channel-body">
+                  <span class="channel-label">البريد الإلكتروني</span>
+                  <a class="channel-value" href="mailto:maherkhtab597@gmail.com">maherkhtab597@gmail.com</a>
+                </div>
+                <button class="icon-btn" data-copy="maherkhtab597@gmail.com" data-copy-label="البريد الإلكتروني" aria-label="نسخ البريد الإلكتروني">
+                  <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2" /><path d="M5 15V5a2 2 0 0 1 2-2h10" /></svg>
+                </button>
+              </div>
+
+              <div class="channel">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z" /></svg></span>
+                <div class="channel-body">
+                  <span class="channel-label">الهاتف / واتساب</span>
+                  <a class="channel-value" href="https://wa.me/963985414993" target="_blank" rel="noopener">+963 985 414 993</a>
+                </div>
+                <button class="icon-btn" data-copy="+963985414993" data-copy-label="رقم الهاتف" aria-label="نسخ رقم الهاتف">
+                  <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2" /><path d="M5 15V5a2 2 0 0 1 2-2h10" /></svg>
+                </button>
+              </div>
+
+              <div class="channel">
+                <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg></span>
+                <div class="channel-body">
+                  <span class="channel-label">الموقع</span>
+                  <span class="channel-value plain">دمشق، سوريا · متاح عن بُعد</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="CV_MAHER_KHTAB.pdf" download="CV_MAHER_KHTAB.pdf" class="cv-card">
+              <span class="card-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></svg></span>
+              <span><strong>السيرة الذاتية</strong><small>CV_MAHER_KHTAB.pdf</small></span>
+            </a>
+          </div>
+
+          <form class="card form-card" id="contactForm" novalidate data-reveal>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">الاسم الكامل</label>
+                <input type="text" id="name" name="name" required placeholder="اسمك" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required placeholder="name@example.com" autocomplete="email" dir="ltr" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="type">نوع المشروع</label>
+              <select id="type" name="type">
+                <option>لوحة تحكم / باك إند Laravel</option>
+                <option>منصة أو موقع ويب</option>
+                <option>ربط تطبيق Flutter بالباك إند</option>
+                <option>نشر على Linux VPS</option>
+                <option>فرصة عمل / وظيفة</option>
+                <option>أخرى</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">الرسالة</label>
+              <textarea id="message" name="message" rows="5" required placeholder="اكتب تفاصيل مشروعك أو رسالتك..."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-gold" data-channel="email">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" /></svg>
+                <span>إرسال عبر البريد</span>
+              </button>
+              <button type="submit" class="btn btn-outline" data-channel="whatsapp">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z" /></svg>
+                <span>إرسال عبر واتساب</span>
+              </button>
+            </div>
+            <p class="form-hint">ستُفتح رسالتك جاهزة في تطبيق البريد أو واتساب — لن يضيع أي شيء.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="brand">
+          <span class="brand-mark">MK</span>
+          <span class="brand-text"><strong>ماهر خطاب</strong><small>Full-Stack · Flutter</small></span>
+        </a>
+        <nav class="footer-links" aria-label="روابط التذييل">
+          <a href="#about">من أنا</a>
+          <a href="#skills">المهارات</a>
+          <a href="#projects">المشاريع</a>
+          <a href="#process">منهجيتي</a>
+          <a href="#contact">تواصل</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> ماهر خطاب. جميع الحقوق محفوظة.</span>
+        <span class="footer-made">صُمّم وطُوّر بعناية <span class="gold-text">✦</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- زر العودة للأعلى مع حلقة التقدّم -->
+  <button class="to-top" id="toTop" aria-label="العودة للأعلى">
+    <svg class="ring" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" /></svg>
+    <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+  </button>
+
+  <!-- نافذة تفاصيل المشروع -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close aria-label="إغلاق">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <div class="modal-meta">
+        <span class="pc-index" id="modalIndex"></span>
+        <span class="pc-type" id="modalType"></span>
+      </div>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="pc-sub" id="modalSub"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+      <ul class="pc-tech" id="modalTech"></ul>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-nav">
+        <button id="modalPrev" type="button">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>السابق
+        </button>
+        <span class="modal-counter" id="modalCounter"></span>
+        <button id="modalNext" type="button">
+          التالي<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
